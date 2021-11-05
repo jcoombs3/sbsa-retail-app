@@ -10,6 +10,13 @@ const routes: Routes = [
       ).then((m) => m.AccountsTransactionsJourneyBundleModule),
   },
   {
+    path: 'statements',
+    loadChildren: () =>
+      import(
+        './accounts-statements/accounts-statements-journey-bundle.module'
+      ).then((m) => m.AccountsStatementsJourneyBundleModule),
+  },
+  {
     path: '**',
     redirectTo: 'my-accounts',
   },
