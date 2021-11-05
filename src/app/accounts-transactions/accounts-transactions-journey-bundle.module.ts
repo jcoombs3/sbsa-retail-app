@@ -1,18 +1,18 @@
-import { NgModule, Provider } from "@angular/core";
-import { TemplateRegistry, ItemModel } from "@backbase/foundation-ang/core";
+import { NgModule, Provider } from '@angular/core';
+import { TemplateRegistry, ItemModel } from '@backbase/foundation-ang/core';
 import {
   AccountsTransactionsJourneyModule,
   AccountsTransactionsJourneyConfiguration,
-  AccountsTransactionsJourneyConfigurationToken
-} from "@backbase/accounts-transactions-journey-ang";
-import { of } from "rxjs";
-import { PUBSUB } from "@backbase/foundation-ang/web-sdk";
+  AccountsTransactionsJourneyConfigurationToken,
+} from '@backbase/accounts-transactions-journey-ang';
+import { of } from 'rxjs';
+import { PUBSUB } from '@backbase/foundation-ang/web-sdk';
 
 export const AccountsTransactionsConfigProvider: Provider = {
   provide: AccountsTransactionsJourneyConfigurationToken,
   useValue: <Partial<AccountsTransactionsJourneyConfiguration>>{
-    enableManageAccounts: false
-  }
+    enableManageAccounts: false,
+  },
 };
 
 export class CustomItemModel {
@@ -20,7 +20,7 @@ export class CustomItemModel {
 
   property(propertyName: string) {
     console.log('++ CustomItemModel.property', propertyName);
-    return of("");
+    return of('');
   }
 }
 
@@ -30,22 +30,22 @@ export class CustomPubsub {
   constructor() {}
 
   publish(eventName: string, data: any) {
-    console.log("++ CustomPubsub.publish", eventName);
+    console.log('++ CustomPubsub.publish', eventName);
     if (this.subscriptions[eventName]) {
-      this.subscriptions[eventName].forEach(function(listener: any) {
+      this.subscriptions[eventName].forEach(function (listener: any) {
         listener(data);
       });
     }
   }
 
   subscribe(eventName: string, listener: any) {
-    console.log("++ CustomPubsub.subscribe", eventName);
+    console.log('++ CustomPubsub.subscribe', eventName);
     this.subscriptions[eventName] = this.subscriptions[eventName] || [];
     this.subscriptions[eventName].push(listener);
   }
 
   unsubscribe(eventName: string, listener: any) {
-    console.log("++ CustomPubsub.unsubscribe", eventName);
+    console.log('++ CustomPubsub.unsubscribe', eventName);
     const eventListeners = this.subscriptions[eventName];
     if (eventListeners) {
       eventListeners.splice(eventListeners.indexOf(listener), 1);
@@ -63,13 +63,13 @@ export class CustomPubsub {
     // fake portal dependency (WA3)
     {
       provide: ItemModel,
-      useClass: CustomItemModel
+      useClass: CustomItemModel,
     },
     // fake web-sdk service
     {
       provide: PUBSUB,
-      useClass: CustomPubsub
-    }
-  ]
+      useClass: CustomPubsub,
+    },
+  ],
 })
 export class AccountsTransactionsJourneyBundleModule {}

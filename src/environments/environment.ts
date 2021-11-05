@@ -2,13 +2,11 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-import { mockProviders } from "../mocks/providers";
+import { mockProviders } from '../mocks/providers';
 
 export const environment = {
   production: false,
-  mockProviders: [
-    ...mockProviders
-  ]
+  mockProviders: [...mockProviders],
 };
 
 /*

@@ -1,7 +1,14 @@
 import { Provider } from '@angular/core';
-import { ContentType, ImageContentItem, StructuredContentItem } from '@backbase/foundation-ang/web-sdk';
+import {
+  ContentType,
+  ImageContentItem,
+  StructuredContentItem,
+} from '@backbase/foundation-ang/web-sdk';
 import { TemplateRegistry } from '@backbase/foundation-ang/core';
-import { createMocks, createMocksInterceptor } from '@backbase/foundation-ang/data-http';
+import {
+  createMocks,
+  createMocksInterceptor,
+} from '@backbase/foundation-ang/data-http';
 import { ContactsHttpServiceMocksProvider } from '@backbase/data-ang/contact-manager';
 import { PaymentOrdersHttpServiceMocksProvider } from '@backbase/data-ang/payment-order';
 import { A2aClientHttpServiceMocksProvider } from '@backbase/data-ang/payment-order-a2a';
@@ -16,7 +23,10 @@ import { CampaignSpaceHttpMocksProvider } from '@backbase/campaign-space-ang';
 import { NotificationsMocksProvider } from '@backbase/retail-ang/notifications';
 import { ActionsMocksProvider } from '@backbase/retail-ang/actions';
 import { MessagecenterHttpServiceMocksProvider } from '@backbase/data-ang/messages';
-import { CardsHttpServiceMocksProvider, TravelNoticesHttpServiceMocksProvider } from '@backbase/data-ang/cards';
+import {
+  CardsHttpServiceMocksProvider,
+  TravelNoticesHttpServiceMocksProvider,
+} from '@backbase/data-ang/cards';
 import {
   IdentityManagementServiceMocksProvider,
   UserManagementServiceMocksProvider,
@@ -87,7 +97,10 @@ const productSummaryContextArrangementsMocks = [
     principalAmount: 620.54,
     currentInvestmentValue: 0.16,
     legalEntityId: '257da57a-11e4-4553-9175-54baf755069b',
-    legalEntitiesIds: ['257da57a-11e4-4553-9175-54baf755069b', 'cd83683b-13f2-43d8-882b-39c9ab27d499'],
+    legalEntitiesIds: [
+      '257da57a-11e4-4553-9175-54baf755069b',
+      'cd83683b-13f2-43d8-882b-39c9ab27d499',
+    ],
     productId: '36c8fc42-ec97-4f83-8a7c-d622625007f3',
     productTypeName: 'Current Account',
     BIC: 'AABAFI22',
@@ -162,7 +175,10 @@ const productSummaryContextArrangementsMocks = [
     principalAmount: 375.73,
     currentInvestmentValue: 0.06,
     legalEntityId: '257da57a-11e4-4553-9175-54baf755069b',
-    legalEntitiesIds: ['257da57a-11e4-4553-9175-54baf755069b', 'cd83683b-13f2-43d8-882b-39c9ab27d499'],
+    legalEntitiesIds: [
+      '257da57a-11e4-4553-9175-54baf755069b',
+      'cd83683b-13f2-43d8-882b-39c9ab27d499',
+    ],
     productId: 'ffb7b827-33b2-4c93-83ad-41511f788a56',
     productNumber: 'ffdd939c-ac4a-4441-ae47-70a7259899e7',
     productTypeName: 'productTypeName',
@@ -235,7 +251,10 @@ const productSummaryContextArrangementsMocks = [
     principalAmount: 10000.0,
     currentInvestmentValue: 0.88,
     legalEntityId: '257da57a-11e4-4553-9175-54baf755069b',
-    legalEntitiesIds: ['257da57a-11e4-4553-9175-54baf755069b', 'cd83683b-13f2-43d8-882b-39c9ab27d499'],
+    legalEntitiesIds: [
+      '257da57a-11e4-4553-9175-54baf755069b',
+      'cd83683b-13f2-43d8-882b-39c9ab27d499',
+    ],
     productId: '89d58325-9cc4-4012-bf5e-7cb1110eb746',
     productNumber: '5fbd5aec-5e37-4ceb-95e0-7787ca42886f',
     productTypeName: 'Investment Account',
@@ -307,7 +326,10 @@ const productSummaryContextArrangementsMocks = [
     principalAmount: 200000.0,
     currentInvestmentValue: 0.79,
     legalEntityId: '257da57a-11e4-4553-9175-54baf755069b',
-    legalEntitiesIds: ['257da57a-11e4-4553-9175-54baf755069b', 'cd83683b-13f2-43d8-882b-39c9ab27d499'],
+    legalEntitiesIds: [
+      '257da57a-11e4-4553-9175-54baf755069b',
+      'cd83683b-13f2-43d8-882b-39c9ab27d499',
+    ],
     productId: '717d27e1-2002-4ac3-aa74-1e2df4038c2d',
     productTypeName: 'Loan',
     BIC: 'OKOYFIHH',
@@ -380,7 +402,10 @@ const productSummaryContextArrangementsMocks = [
     principalAmount: 466.83,
     currentInvestmentValue: 0.33,
     legalEntityId: '257da57a-11e4-4553-9175-54baf755069b',
-    legalEntitiesIds: ['257da57a-11e4-4553-9175-54baf755069b', 'cd83683b-13f2-43d8-882b-39c9ab27d499'],
+    legalEntitiesIds: [
+      '257da57a-11e4-4553-9175-54baf755069b',
+      'cd83683b-13f2-43d8-882b-39c9ab27d499',
+    ],
     productId: '2cf3c2c0-8ad7-482b-9cb1-a0cf9224a5dd',
     productTypeName: 'Current Account',
     BIC: 'AABAFI22',
@@ -469,7 +494,10 @@ const productSummaryContextArrangementsMocks = [
     principalAmount: 620.54,
     currentInvestmentValue: 0.16,
     legalEntityId: '257da57a-11e4-4553-9175-54baf755069b',
-    legalEntitiesIds: ['257da57a-11e4-4553-9175-54baf755069b', 'cd83683b-13f2-43d8-882b-39c9ab27d499'],
+    legalEntitiesIds: [
+      '257da57a-11e4-4553-9175-54baf755069b',
+      'cd83683b-13f2-43d8-882b-39c9ab27d499',
+    ],
     productId: '36c8fc42-ec97-4f83-8a7c-d622625007f3',
     productTypeName: 'Current Account',
     bankBranchCode: '026009593',
@@ -545,7 +573,10 @@ const productSummaryContextArrangementsMocks = [
     principalAmount: 620.54,
     currentInvestmentValue: 0.16,
     legalEntityId: '257da57a-11e4-4553-9175-54baf755069b',
-    legalEntitiesIds: ['257da57a-11e4-4553-9175-54baf755069b', 'cd83683b-13f2-43d8-882b-39c9ab27d499'],
+    legalEntitiesIds: [
+      '257da57a-11e4-4553-9175-54baf755069b',
+      'cd83683b-13f2-43d8-882b-39c9ab27d499',
+    ],
     productId: '36c8fc42-ec97-4f83-8a7c-d622625007f3',
     productTypeName: 'Current Account',
     bankBranchCode: '026008573',
@@ -621,7 +652,9 @@ const ProductSummaryContextArrangementsMockProvider = createMocks([
 export const PortalContentServiceMockProvider = {
   get: (contentRef: string) => {
     // Here can be placed different contentItems by contentRefId. The contentRef Ids are references to content stored in ContentServices.
-    const contentRefs: { [key: string]: ImageContentItem | StructuredContentItem } = {
+    const contentRefs: {
+      [key: string]: ImageContentItem | StructuredContentItem;
+    } = {
       // BB logo, referenced as content
       '{"kind":"content","path":"assets/creatives/logo-sml.svg"}': {
         id: '11c4cc8d-3e69-44d3-a93c-d7771255e4f5',

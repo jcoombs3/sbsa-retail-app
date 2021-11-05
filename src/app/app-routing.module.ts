@@ -3,20 +3,20 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: "my-accounts",
+    path: 'my-accounts',
     loadChildren: () =>
       import(
-        "./accounts-transactions/accounts-transactions-journey-bundle.module"
+        './accounts-transactions/accounts-transactions-journey-bundle.module'
       ).then((m) => m.AccountsTransactionsJourneyBundleModule),
   },
   {
-    path: "**",
-    redirectTo: "my-accounts",
+    path: '**',
+    redirectTo: 'my-accounts',
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

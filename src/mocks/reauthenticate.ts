@@ -120,7 +120,9 @@ const invalidCodeChallenge = () => {
         });
       } else {
         const response = getChallengeData();
-        (<any>response.challengeData).remainingAuthenticationAttempts = attemptsCounter;
+        (<any>(
+          response.challengeData
+        )).remainingAuthenticationAttempts = attemptsCounter;
         reject({
           ...response,
           postChallengeResponse,

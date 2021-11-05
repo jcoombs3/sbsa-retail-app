@@ -11,12 +11,18 @@ const normalizeNavigationTreeProperties = (navigationTree: any) => {
         ...previousValue,
         [currentValue]: navigationTree.preferences[currentValue].value,
       }),
-      {},
+      {}
     ),
   };
   delete normalizedTree.preferences;
-  if (normalizedTree.children && Array.isArray(normalizedTree.children) && normalizedTree.children.length) {
-    normalizedTree.children = normalizedTree.children.map((child: any) => normalizeNavigationTreeProperties(child));
+  if (
+    normalizedTree.children &&
+    Array.isArray(normalizedTree.children) &&
+    normalizedTree.children.length
+  ) {
+    normalizedTree.children = normalizedTree.children.map((child: any) =>
+      normalizeNavigationTreeProperties(child)
+    );
   }
   return normalizedTree;
 };
