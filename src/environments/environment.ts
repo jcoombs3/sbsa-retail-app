@@ -2,8 +2,13 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+import { mockProviders } from "../mocks/providers";
+
 export const environment = {
-  production: false
+  production: false,
+  mockProviders: [
+    ...mockProviders
+  ]
 };
 
 /*
@@ -14,3 +19,7 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
+if (window.localStorage.getItem('enableMocks') === null) {
+  window.localStorage.setItem('enableMocks', 'true');
+}
