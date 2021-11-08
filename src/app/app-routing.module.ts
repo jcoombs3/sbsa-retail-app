@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -8,6 +9,7 @@ const routes: Routes = [
       import(
         './accounts-transactions/accounts-transactions-journey-bundle.module'
       ).then((m) => m.AccountsTransactionsJourneyBundleModule),
+    canActivate: [AuthGuard],
   },
   {
     path: 'statements',
@@ -15,6 +17,7 @@ const routes: Routes = [
       import(
         './accounts-statements/accounts-statements-journey-bundle.module'
       ).then((m) => m.AccountsStatementsJourneyBundleModule),
+    canActivate: [AuthGuard],
   },
   {
     path: '**',
