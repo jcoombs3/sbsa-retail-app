@@ -2,6 +2,12 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "accounts-transactions-journey-ang": [
+        "dist/accounts-transactions-journey-ang/accounts-transactions-journey-ang",
+        "dist/accounts-transactions-journey-ang"
+      ]
+    },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
