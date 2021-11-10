@@ -24,7 +24,10 @@ const extendedRoute = {
     {
       path: 'list',
       data: { title: 'My Accounts' },
-      component: AccountsListComponent,
+      loadChildren: () =>
+        import('./accounts-list-extended/accounts-list-extended.module').then(
+          (m) => m.AccountsListExtendedModule
+        ),
     },
     {
       path: 'manage',
