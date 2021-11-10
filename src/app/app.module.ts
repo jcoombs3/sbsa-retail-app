@@ -1,6 +1,12 @@
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+// LOCALE configuration
+import { LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeAf from '@angular/common/locales/af';
+registerLocaleData(localeAf);
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment, authConfig } from '../environments/environment';
@@ -25,6 +31,7 @@ import { AuthGuard } from './guards/auth.guard';
   providers: [
     ...(environment.mockProviders || []),
     AuthGuard,
+    { provide: LOCALE_ID, useValue: 'af' },
     { provide: AuthConfig, useValue: authConfig },
     {
       provide: OAuthModuleConfig,
