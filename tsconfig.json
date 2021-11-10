@@ -2,12 +2,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "paths": {
-      "@sbsa/accounts-summary-common-ang": [
-        "dist/accounts-summary-common-ang/accounts-summary-common-ang",
-        "dist/accounts-summary-common-ang"
-      ]
-    },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

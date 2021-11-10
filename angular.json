@@ -129,46 +129,6 @@
           }
         }
       }
-    },
-    "accounts-summary-common-ang": {
-      "projectType": "library",
-      "root": "projects/accounts-summary-common-ang",
-      "sourceRoot": "projects/accounts-summary-common-ang/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "tsConfig": "projects/accounts-summary-common-ang/tsconfig.lib.json",
-            "project": "projects/accounts-summary-common-ang/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/accounts-summary-common-ang/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/accounts-summary-common-ang/src/test.ts",
-            "tsConfig": "projects/accounts-summary-common-ang/tsconfig.spec.json",
-            "karmaConfig": "projects/accounts-summary-common-ang/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/accounts-summary-common-ang/tsconfig.lib.json",
-              "projects/accounts-summary-common-ang/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
     }
   },
   "defaultProject": "sbsa-retail-app"
