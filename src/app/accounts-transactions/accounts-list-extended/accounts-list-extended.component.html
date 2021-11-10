@@ -1,0 +1,9 @@
+<ng-container *ngIf="config.enableManageAccounts; else titleOnly">
+  <bb-heading-widget [heading]="heading" [headingType]="'h1'" [buttonTitle]="manageAccounts" [iconClasses]="'settings'" [customClassName]="'px-0 flex-row align-items-center'" [buttonClasses]="'btn btn-link w-auto bb-button bb-button--xs-hide-text m-0'" (buttonAction)="navigateToAccountManagement()"></bb-heading-widget>
+</ng-container>
+
+<ng-template #titleOnly>
+  <bb-heading-widget [heading]="heading" [headingType]="'h1'"></bb-heading-widget>
+</ng-template>
+
+<bb-product-summary-list-widget [showIcons]="config.showAccountTypes" [maskIndicator]="config.maskIndicator" (selectedAccount)="onAccountSelect($event)"></bb-product-summary-list-widget>

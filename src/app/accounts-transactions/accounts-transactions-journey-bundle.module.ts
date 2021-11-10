@@ -13,6 +13,9 @@ import {
 } from '@backbase/accounts-transactions-journey-ang';
 import { providers } from './config.providers';
 
+import { AccountsListExtendedModule } from './accounts-list-extended/accounts-list-extended.module';
+import { AccountsListExtendedComponent } from './accounts-list-extended/accounts-list-extended.component';
+
 const extendedRoute = {
   path: '',
   component: AccountsTransactionsJourneyComponent,
@@ -24,8 +27,11 @@ const extendedRoute = {
     },
     {
       path: 'list',
-      component: AccountsListComponent,
       data: { title: 'My Accounts' },
+      loadChildren: () =>
+        import('./accounts-list-extended/accounts-list-extended.module').then(
+          (m) => m.AccountsListExtendedModule
+        ),
     },
     {
       path: 'manage',

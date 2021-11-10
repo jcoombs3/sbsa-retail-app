@@ -10,7 +10,7 @@ import { PUBSUB } from '@backbase/foundation-ang/web-sdk';
 export const AccountsTransactionsConfigProvider: Provider = {
   provide: AccountsTransactionsJourneyConfigurationToken,
   useValue: <Partial<AccountsTransactionsJourneyConfiguration>>{
-    enableManageAccounts: false,
+    enableManageAccounts: true,
   },
 };
 
