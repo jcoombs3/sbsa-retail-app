@@ -6,10 +6,10 @@ import {
   TransactionDetailsService,
   TransactionsDetailsLoading,
 } from '@backbase/transactions-common-ang';
-
 import { Observable, of, Subject } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
 import { AccountsTransactionsJourneyService } from '@backbase/accounts-transactions-journey-ang';
+
 import { TransactionsHelperService } from '../../transactions-details-helper.service';
 
 @Component({

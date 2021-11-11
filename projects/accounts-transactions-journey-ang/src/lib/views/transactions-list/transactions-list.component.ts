@@ -5,6 +5,7 @@ import {
   TransactionsList,
 } from '@backbase/transactions-common-ang';
 import { AccountsTransactionsJourneyService } from '@backbase/accounts-transactions-journey-ang';
+
 import { TransactionsHelperService } from '../../transactions-details-helper.service';
 
 @Component({
