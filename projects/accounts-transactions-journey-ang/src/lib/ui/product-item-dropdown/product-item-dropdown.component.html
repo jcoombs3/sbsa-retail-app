@@ -1,0 +1,9 @@
+<div class="bb-block bb-block--md">
+  <div class="btn-group"> <button bbButton (click)="doDropdownAction()">Transfer</button>
+    <bb-dropdown-menu-ui class="btn-group" icon="caret-down" container="body" aria-label="options" iconSize="lg" [options]="dropdownMenuOptions">
+      <ng-template bbDropdownMenuItem> 
+        <button role="menuitem" class="dropdown-item" *ngFor="let option of dropdownMenuOptions" (click)="doDropdownAction(option.name)"> {{option.name}} </button> 
+      </ng-template>
+    </bb-dropdown-menu-ui>
+  </div>
+</div>

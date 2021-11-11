@@ -25,9 +25,9 @@ const extendedRoute = {
       path: 'list',
       data: { title: 'My Accounts' },
       loadChildren: () =>
-        import('./accounts-list-extended/accounts-list-extended.module').then(
-          (m) => m.AccountsListExtendedModule
-        ),
+        import(
+          './views/accounts-list-extended/accounts-list-extended.module'
+        ).then((m) => m.AccountsListExtendedModule),
     },
     {
       path: 'manage',
