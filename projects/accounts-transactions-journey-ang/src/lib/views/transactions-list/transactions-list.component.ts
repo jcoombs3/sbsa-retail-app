@@ -49,4 +49,12 @@ export class TransactionsListComponent implements OnInit {
       );
     }
   }
+
+  // Custom logic
+  getActions(transaction: Transaction) {
+    this.shared.setTransactionId(transaction.id || '');
+    this.router.navigate(['./actions', { transactionId: transaction.id }], {
+      relativeTo: this.route,
+    });
+  }
 }
