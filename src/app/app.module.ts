@@ -19,6 +19,7 @@ import {
   OAuthStorage,
 } from 'angular-oauth2-oidc';
 import { AuthGuard } from './guards/auth.guard';
+import { NotificationModule } from '@backbase/ui-ang';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,6 +28,7 @@ import { AuthGuard } from './guards/auth.guard';
     AppRoutingModule,
     HttpClientModule,
     OAuthModule.forRoot(),
+    NotificationModule,
   ],
   providers: [
     ...(environment.mockProviders || []),
