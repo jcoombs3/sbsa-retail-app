@@ -23,6 +23,5 @@ import { AccountsListExtendedComponent } from './accounts-list-extended.componen
     ProductItemDropdownModule,
   ],
   declarations: [AccountsListExtendedComponent],
-  exports: [AccountsListExtendedComponent],
 })
 export class AccountsListExtendedModule {}

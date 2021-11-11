@@ -42,14 +42,18 @@ const extendedRoute = {
         { path: '', redirectTo: 'list', pathMatch: 'full' },
         {
           path: 'list',
-          component: TransactionsListComponent,
           data: { title: 'Transactions' },
-          children: [
-            {
-              path: 'detail',
-              component: TransactionDetailsComponent,
-            },
-          ],
+          loadChildren: () =>
+            import(
+              './views/transactions-list-extended/transactions-list-extended.module'
+            ).then((m) => m.TransactionsListExtendedModule),
+          //          component: TransactionsListComponent,
+          //          children: [
+          //            {
+          //              path: 'detail',
+          //              component: TransactionDetailsComponent,
+          //            },
+          //          ],
         },
         {
           path: 'details',
