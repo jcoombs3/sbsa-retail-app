@@ -1,14 +1,10 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {
-  InquireAndDisputeTopics,
   Transaction,
-  TransactionCheckImageResponse,
   TransactionDetailsService,
-  TransactionsDetailsLoading,
 } from '@backbase/transactions-common-ang';
-import { Observable, of, Subject } from 'rxjs';
-import { takeUntil, tap } from 'rxjs/operators';
-import { AccountsTransactionsJourneyService } from '@backbase/accounts-transactions-journey-ang';
+import { Observable, Subject } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { NotificationAlertType, NotificationService } from '@backbase/ui-ang';
 
 import { TransactionsHelperService } from '../../transactions-details-helper.service';
@@ -50,10 +46,8 @@ export class TransactionActionsComponent implements OnInit, OnDestroy {
   private unsubscribeSubject = new Subject<void>();
 
   constructor(
-    readonly config: AccountsTransactionsJourneyService,
     public shared: TransactionsHelperService,
     private readonly transactionDetailsService: TransactionDetailsService,
-    cd: ChangeDetectorRef,
     private readonly notificationService: NotificationService
   ) {}
 
@@ -81,7 +75,7 @@ export class TransactionActionsComponent implements OnInit, OnDestroy {
     this.notificationService.showNotification({
       header: 'Transaction Action No',
       message: `The notification triggered by clicking on No button.`,
-      modifier: 'warning',
+      modifier: 'warning' as NotificationAlertType,
       dismissible: true,
     });
     this.closeDialog();
@@ -91,7 +85,7 @@ export class TransactionActionsComponent implements OnInit, OnDestroy {
     this.notificationService.showNotification({
       header: 'Transaction Action Yes',
       message: `The notification triggered by clicking on Yes button.`,
-      modifier: 'success',
+      modifier: 'success' as NotificationAlertType,
       dismissible: true,
     });
     this.closeDialog();
