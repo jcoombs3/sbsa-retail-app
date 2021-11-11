@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TransactionsListWidgetModule } from '@backbase/transactions-list-widget-ang';
+import { NotificationModule } from '@backbase/ui-ang/notification';
+
 import { TransactionActionsComponent } from './transactions-actions.component';
 
 @NgModule({
@@ -15,6 +17,7 @@ import { TransactionActionsComponent } from './transactions-actions.component';
       },
     ]),
     TransactionsListWidgetModule,
+    NotificationModule,
   ],
 })
 export class TransactionsActionsModule {}

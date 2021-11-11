@@ -9,6 +9,7 @@ import {
 import { Observable, of, Subject } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
 import { AccountsTransactionsJourneyService } from '@backbase/accounts-transactions-journey-ang';
+import { NotificationAlertType, NotificationService } from '@backbase/ui-ang';
 
 import { TransactionsHelperService } from '../../transactions-details-helper.service';
 
@@ -19,8 +20,8 @@ import { TransactionsHelperService } from '../../transactions-details-helper.ser
     <bb-modal-ui
       *ngIf="currentTransaction | async as transaction"
       [isOpen]="isDetailsOpen"
-      (cancel)="closeDialog()"
-      (confirm)="onConfirmDialog()"
+      (cancel)="onNoDialog()"
+      (confirm)="onYesDialog()"
     >
       <bb-modal-header-ui>
         <ng-template bbCustomModalHeader>
@@ -37,7 +38,7 @@ import { TransactionsHelperService } from '../../transactions-details-helper.ser
       <bb-modal-footer-ui
         cancelText="No"
         confirmText="Yes"
-        (confirm)="closeDialog()"
+        (confirm)="onYesDialog()"
       >
       </bb-modal-footer-ui>
     </bb-modal-ui>
@@ -52,7 +53,8 @@ export class TransactionActionsComponent implements OnInit, OnDestroy {
     readonly config: AccountsTransactionsJourneyService,
     public shared: TransactionsHelperService,
     private readonly transactionDetailsService: TransactionDetailsService,
-    cd: ChangeDetectorRef
+    cd: ChangeDetectorRef,
+    private readonly notificationService: NotificationService
   ) {}
 
   ngOnInit() {
@@ -70,12 +72,28 @@ export class TransactionActionsComponent implements OnInit, OnDestroy {
     this.unsubscribeSubject.complete();
   }
 
-  closeDialog() {
+  private closeDialog() {
     this.isDetailsOpen = false;
     this.shared.setCloseDetail();
   }
 
-  onConfirmDialog() {
+  onNoDialog() {
+    this.notificationService.showNotification({
+      header: 'Transaction Action No',
+      message: `The notification triggered by clicking on No button.`,
+      modifier: 'warning',
+      dismissible: true,
+    });
+    this.closeDialog();
+  }
+
+  onYesDialog() {
+    this.notificationService.showNotification({
+      header: 'Transaction Action Yes',
+      message: `The notification triggered by clicking on Yes button.`,
+      modifier: 'success',
+      dismissible: true,
+    });
     this.closeDialog();
   }
 }
