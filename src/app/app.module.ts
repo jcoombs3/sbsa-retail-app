@@ -1,5 +1,6 @@
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 // LOCALE configuration
 import { LOCALE_ID } from '@angular/core';
@@ -27,6 +28,7 @@ import { NotificationModule } from '@backbase/ui-ang';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    NoopAnimationsModule,
     OAuthModule.forRoot(),
     NotificationModule,
   ],
