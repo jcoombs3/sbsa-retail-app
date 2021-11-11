@@ -8,6 +8,7 @@ import {
   AccountsDetailsTabComponent,
   AccountsDetailsComponent,
 } from '@backbase/accounts-transactions-journey-ang';
+import { TransactionsHelperService } from './transactions-details-helper.service';
 
 const extendedRoute = {
   path: '',
@@ -41,9 +42,9 @@ const extendedRoute = {
           path: 'list',
           data: { title: 'Transactions' },
           loadChildren: () =>
-            import(
-              './views/transactions-list-extended/transactions-list-extended.module'
-            ).then((m) => m.TransactionsListExtendedModule),
+            import('./views/transactions-list/transactions-list.module').then(
+              (m) => m.TransactionsListModule
+            ),
         },
         {
           path: 'details',
@@ -62,6 +63,7 @@ const extendedRoute = {
   ],
   exports: [],
   providers: [
+    TransactionsHelperService,
     // extension slot dependency (WA3)
     TemplateRegistry,
   ],

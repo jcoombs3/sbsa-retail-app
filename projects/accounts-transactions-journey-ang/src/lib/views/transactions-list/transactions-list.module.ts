@@ -3,9 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TransactionsListWidgetModule } from '@backbase/retail-ang';
-import { TransactionDetailsComponent } from '@backbase/accounts-transactions-journey-ang';
 
-import { TransactionsListExtendedComponent } from './transactions-list-extended.component';
+import { TransactionsListComponent } from './transactions-list.component';
 
 @NgModule({
   imports: [
@@ -13,11 +12,14 @@ import { TransactionsListExtendedComponent } from './transactions-list-extended.
     RouterModule.forChild([
       {
         path: '',
-        component: TransactionsListExtendedComponent,
+        component: TransactionsListComponent,
         children: [
           {
             path: 'detail',
-            component: TransactionDetailsComponent,
+            loadChildren: () =>
+              import(
+                '../transactions-details/transactions-details.module'
+              ).then((m) => m.TransactionsDetailsModule),
           },
           {
             path: 'actions',
@@ -32,6 +34,6 @@ import { TransactionsListExtendedComponent } from './transactions-list-extended.
     ReactiveFormsModule,
     TransactionsListWidgetModule,
   ],
-  declarations: [TransactionsListExtendedComponent],
+  declarations: [TransactionsListComponent],
 })
-export class TransactionsListExtendedModule {}
+export class TransactionsListModule {}

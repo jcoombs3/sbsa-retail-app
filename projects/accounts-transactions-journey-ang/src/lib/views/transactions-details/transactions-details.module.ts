@@ -2,19 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TransactionsListWidgetModule } from '@backbase/transactions-list-widget-ang';
-import { TransactionActionsComponent } from './transactions-actions.component';
+import { TransactionDetailsComponent } from './transactions-details.component';
 
 @NgModule({
-  declarations: [TransactionActionsComponent],
+  declarations: [TransactionDetailsComponent],
   imports: [
     CommonModule,
     RouterModule.forChild([
       {
         path: '',
-        component: TransactionActionsComponent,
+        component: TransactionDetailsComponent,
       },
     ]),
     TransactionsListWidgetModule,
   ],
 })
-export class TransactionsActionsModule {}
+export class TransactionsDetailsModule {}
