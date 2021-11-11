@@ -3,12 +3,9 @@ import { TemplateRegistry } from '@backbase/foundation-ang/core';
 import {
   AccountsTransactionsJourneyModule,
   AccountsTransactionsJourneyComponent,
-  AccountsListComponent,
   AccountsManageComponent,
   AccountsManageGuardService,
   AccountsDetailsTabComponent,
-  TransactionsListComponent,
-  TransactionDetailsComponent,
   AccountsDetailsComponent,
 } from '@backbase/accounts-transactions-journey-ang';
 
@@ -47,13 +44,6 @@ const extendedRoute = {
             import(
               './views/transactions-list-extended/transactions-list-extended.module'
             ).then((m) => m.TransactionsListExtendedModule),
-          //          component: TransactionsListComponent,
-          //          children: [
-          //            {
-          //              path: 'detail',
-          //              component: TransactionDetailsComponent,
-          //            },
-          //          ],
         },
         {
           path: 'details',

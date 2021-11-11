@@ -18,7 +18,7 @@ export class CustomItemModel {
   constructor() {}
 
   property(propertyName: string) {
-    console.log('++ CustomItemModel.property', propertyName);
+    //console.log('++ CustomItemModel.property', propertyName);
     return of('');
   }
 }
@@ -29,7 +29,7 @@ export class CustomPubsub {
   constructor() {}
 
   publish(eventName: string, data: any) {
-    console.log('++ CustomPubsub.publish', eventName);
+    //console.log('++ CustomPubsub.publish', eventName);
     if (this.subscriptions[eventName]) {
       this.subscriptions[eventName].forEach(function (listener: any) {
         listener(data);
@@ -38,13 +38,13 @@ export class CustomPubsub {
   }
 
   subscribe(eventName: string, listener: any) {
-    console.log('++ CustomPubsub.subscribe', eventName);
+    //console.log('++ CustomPubsub.subscribe', eventName);
     this.subscriptions[eventName] = this.subscriptions[eventName] || [];
     this.subscriptions[eventName].push(listener);
   }
 
   unsubscribe(eventName: string, listener: any) {
-    console.log('++ CustomPubsub.unsubscribe', eventName);
+    //console.log('++ CustomPubsub.unsubscribe', eventName);
     const eventListeners = this.subscriptions[eventName];
     if (eventListeners) {
       eventListeners.splice(eventListeners.indexOf(listener), 1);

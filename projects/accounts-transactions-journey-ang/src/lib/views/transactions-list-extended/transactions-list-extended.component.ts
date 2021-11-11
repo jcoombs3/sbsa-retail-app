@@ -1,11 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Transaction } from '@backbase/transactions-common-ang';
+import { TransactionsListComponent } from '@backbase/accounts-transactions-journey-ang';
 
 @Component({
-  selector: 'lib-transactions-list-extended',
+  selector: 'sbsa-transactions-list-view',
   templateUrl: './transactions-list-extended.component.html',
 })
-export class TransactionsListExtendedComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-}
+export class TransactionsListExtendedComponent extends TransactionsListComponent {}
