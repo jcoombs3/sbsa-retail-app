@@ -4,6 +4,8 @@
   "compilerOptions": {
     "paths": {
       "@sbsa/accounts-transactions-journey-ang": [
+        "dist/accounts-transactions-journey-ang/accounts-transactions-journey-ang",
+        "dist/accounts-transactions-journey-ang",
         "projects/accounts-transactions-journey-ang/src/public-api.ts"
       ]
     },
