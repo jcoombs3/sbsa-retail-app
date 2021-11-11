@@ -10,26 +10,7 @@ import { TransactionsHelperService } from '../../transactions-details-helper.ser
 
 @Component({
   selector: 'sbsa-transactions-list-view',
-  template: `
-    <bb-transactions-list-widget
-      [googleAPIKey]="config.apiKey"
-      [pageSize]="config.itemsPerPage"
-      [paginationType]="'load-more'"
-      [showPendingTransactionsOnTop]="config.pendingOnTop"
-      [showCheckImage]="config.showCheckImages"
-      [showControls]="true"
-      [showChangeCategory]="true"
-      [enableDisputeAndInquiry]="config.enableDisputeAndInquiry"
-      [disputeEligibilityDays]="config.disputeEligibilityDays"
-      [disputeTransactionTypes]="config.disputeTransactionTypes"
-      [disputeByBillingStatus]="config.disputeByBillingStatus"
-      [inquireTopicId]="config.inquireTopicId"
-      [disputeTopicId]="config.disputeTopicId"
-      (transactionSelected)="getTransaction($event)"
-      (transactionsLoaded)="transactionsLoaded($event)"
-    ></bb-transactions-list-widget>
-    <router-outlet></router-outlet>
-  `,
+  templateUrl: './transactions-list.component.html',
 })
 export class TransactionsListComponent implements OnInit {
   constructor(
