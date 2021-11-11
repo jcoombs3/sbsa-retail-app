@@ -6,7 +6,9 @@
         Select transaction
       </span>
     </div>
-    <button (click)="getActions(hostRef.transaction)">Actions</button>
+    <button bbButton color="secondary" [circle]="true" (click)="getActions(hostRef.transaction)" aria-label="transaction actions">
+      <bb-icon-ui name="filter-b-and-w" aria-hidden="true"></bb-icon-ui>
+    </button>
   </div>
 </ng-template>
 

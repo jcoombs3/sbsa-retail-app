@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TransactionsListWidgetModule } from '@backbase/retail-ang';
+import { ButtonModule } from "@backbase/ui-ang/button";
+import { IconModule } from "@backbase/ui-ang/icon";
 
 import { TransactionsListComponent } from './transactions-list.component';
 
@@ -33,6 +35,8 @@ import { TransactionsListComponent } from './transactions-list.component';
     ]),
     ReactiveFormsModule,
     TransactionsListWidgetModule,
+    ButtonModule,
+    IconModule
   ],
   declarations: [TransactionsListComponent],
 })
