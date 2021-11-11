@@ -22,15 +22,23 @@ import { TransactionsHelperService } from '../../transactions-details-helper.ser
       (cancel)="closeDialog()"
       (confirm)="onConfirmDialog()"
     >
-      <bb-modal-header-ui
-        title="Confirm changing the color"
-      ></bb-modal-header-ui>
+      <bb-modal-header-ui>
+        <ng-template bbCustomModalHeader>
+          <h3 class="modal-title">
+            {{ transaction.counterPartyName }}: Transaction Actions
+          </h3>
+        </ng-template>
+      </bb-modal-header-ui>
       <bb-modal-body-ui>
         <ng-template bbCustomModalBody>
-          Are you sure you want to change the color?
+          Are you sure you want to ...?
         </ng-template>
       </bb-modal-body-ui>
-      <bb-modal-footer-ui confirmText="I Agree" (confirm)="closeDialog()">
+      <bb-modal-footer-ui
+        cancelText="No"
+        confirmText="Yes"
+        (confirm)="closeDialog()"
+      >
       </bb-modal-footer-ui>
     </bb-modal-ui>
   `,
