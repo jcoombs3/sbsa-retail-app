@@ -1,3 +1,15 @@
+<ng-template bbTransactionsListItemCustomizable let-hostRef>
+  <div class="d-flex">
+    <div bbAccessibilityKeyboard (click)="hostRef.openDetails()" class="flex-grow-1">
+      <ng-container bbTransactionsListItemHeaderCustomizable [bbHostRef]="hostRef"></ng-container>
+      <span i18n="Transaction selector button@@transactions.list.transaction.label" i18n-aria-label="Transaction selector button label@@transactions.list.transaction.label" class="sr-only" role="button">
+        Select transaction
+      </span>
+    </div>
+    <button (click)="getActions(hostRef.transaction)">Actions</button>
+  </div>
+</ng-template>
+
 <!-- START: TransactionsListComponent OOTB -->
 <bb-transactions-list-widget [googleAPIKey]="config.apiKey" [pageSize]="config.itemsPerPage" [paginationType]="'load-more'" [showPendingTransactionsOnTop]="config.pendingOnTop" [showCheckImage]="config.showCheckImages" [showControls]="true" [showChangeCategory]="true" [enableDisputeAndInquiry]="config.enableDisputeAndInquiry" [disputeEligibilityDays]="config.disputeEligibilityDays" [disputeTransactionTypes]="config.disputeTransactionTypes" [disputeByBillingStatus]="config.disputeByBillingStatus" [inquireTopicId]="config.inquireTopicId" [disputeTopicId]="config.disputeTopicId" (transactionSelected)="getTransaction($event)" (transactionsLoaded)="transactionsLoaded($event)"></bb-transactions-list-widget>
 <router-outlet></router-outlet>
