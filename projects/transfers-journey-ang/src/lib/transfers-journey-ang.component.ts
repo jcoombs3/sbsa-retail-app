@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
     <p>
       transfers-journey-ang works!
     </p>
+    <bb-payord-omni-payment-widget-ang></bb-payord-omni-payment-widget-ang>
   `,
   styles: [],
 })

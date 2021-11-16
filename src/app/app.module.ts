@@ -22,6 +22,8 @@ import {
 import { AuthGuard } from './guards/auth.guard';
 import { NotificationModule } from '@backbase/ui-ang';
 
+import { BackbaseCoreModule } from '@backbase/foundation-ang/core';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -31,6 +33,19 @@ import { NotificationModule } from '@backbase/ui-ang';
     NoopAnimationsModule,
     OAuthModule.forRoot(),
     NotificationModule,
+    BackbaseCoreModule.forRoot({
+      assets: {
+        assetsStaticItemName: '',
+      },
+      classMap: {},
+      logDeprecations: true,
+      features: {
+        EXTRA_ENCODE_URI_PARAMS: true,
+        ACTION_RECIPES_UNIQUE_CONSTRAINT_ENDPOINTS: true,
+        ENFORCE_INJECTOR_FOR_CREATE_STORE: true,
+        SELECT_CONTEXT_INNER_CONTAINER: true,
+      },
+    }),
   ],
   providers: [
     ...(environment.mockProviders || []),
