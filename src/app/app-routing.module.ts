@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
+import { PayordStopChecksListWidgetAngComponent } from '@backbase/payord-stop-checks-list-widget-ang';
 
 const routes: Routes = [
   {
@@ -17,6 +18,11 @@ const routes: Routes = [
       import(
         './accounts-statements/accounts-statements-journey-bundle.module'
       ).then((m) => m.AccountsStatementsJourneyBundleModule),
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'transfers',
+    component: PayordStopChecksListWidgetAngComponent,
     canActivate: [AuthGuard],
   },
   {
