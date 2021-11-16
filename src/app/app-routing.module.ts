@@ -20,6 +20,14 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
+    path: 'transfers',
+    loadChildren: () =>
+      import('./transfers/transfers-journey-bundle.module').then(
+        (m) => m.TransfersJourneyBundleModule
+      ),
+    canActivate: [AuthGuard],
+  },
+  {
     path: '**',
     redirectTo: 'my-accounts',
   },

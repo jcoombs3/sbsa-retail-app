@@ -169,6 +169,46 @@
           }
         }
       }
+    },
+    "transfers-journey-ang": {
+      "projectType": "library",
+      "root": "projects/transfers-journey-ang",
+      "sourceRoot": "projects/transfers-journey-ang/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/transfers-journey-ang/tsconfig.lib.json",
+            "project": "projects/transfers-journey-ang/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/transfers-journey-ang/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/transfers-journey-ang/src/test.ts",
+            "tsConfig": "projects/transfers-journey-ang/tsconfig.spec.json",
+            "karmaConfig": "projects/transfers-journey-ang/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/transfers-journey-ang/tsconfig.lib.json",
+              "projects/transfers-journey-ang/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "sbsa-retail-app"
