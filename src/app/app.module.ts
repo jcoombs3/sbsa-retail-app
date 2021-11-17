@@ -23,18 +23,66 @@ import { AuthGuard } from './guards/auth.guard';
 import { NotificationModule } from '@backbase/ui-ang';
 
 // Transfers
+import { BackbaseCoreModule } from '@backbase/foundation-ang/core';
+import { PayordStopChecksWidgetAngModule } from '@backbase/payord-stop-checks-widget-ang';
 import { TransferInternalJourneyAngModule } from '@sbsa/transfer-internal-journey-ang';
+import { ItemModel } from '@backbase/foundation-ang/core';
+import { of } from 'rxjs';
+
+export class CustomItemModel {
+  constructor() {}
+
+  property(propertyName: string) {
+    console.log('++ AppModuleCustomItemModel.property', propertyName);
+    switch (propertyName) {
+      case 'resourceName':
+        return of('Payments');
+        break;
+      case 'businessFunction':
+        return of('Stop Checks');
+        break;
+      case 'privilege':
+        return of('create');
+        break;
+      case 'notificationDismissTime':
+        return of('3');
+        break;
+      case 'currencies':
+        return of('USD');
+        break;
+      case 'checksRangeNumber':
+        return of('0');
+        break;
+      default:
+        return of(undefined);
+    }
+  }
+}
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    BackbaseCoreModule.forRoot({
+      assets: {
+        assetsStaticItemName: '',
+      },
+      classMap: {},
+      logDeprecations: true,
+      features: {
+        EXTRA_ENCODE_URI_PARAMS: true,
+        ACTION_RECIPES_UNIQUE_CONSTRAINT_ENDPOINTS: true,
+        ENFORCE_INJECTOR_FOR_CREATE_STORE: true,
+        SELECT_CONTEXT_INNER_CONTAINER: true,
+      },
+    }),
     AppRoutingModule,
     HttpClientModule,
     NoopAnimationsModule,
     OAuthModule.forRoot(),
     NotificationModule,
-    TransferInternalJourneyAngModule,
+    //TransferInternalJourneyAngModule,
+    PayordStopChecksWidgetAngModule,
   ],
   providers: [
     ...(environment.mockProviders || []),
@@ -57,6 +105,11 @@ import { TransferInternalJourneyAngModule } from '@sbsa/transfer-internal-journe
       deps: [OAuthService],
       useFactory: (oAuthService: OAuthService) => () =>
         oAuthService.loadDiscoveryDocumentAndTryLogin(),
+    },
+    // fake portal dependency (WA3)
+    {
+      provide: ItemModel,
+      useClass: CustomItemModel,
     },
   ],
   bootstrap: [AppComponent],

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
 import { TransferInternalJourneyAngComponent } from '@sbsa/transfer-internal-journey-ang';
+import { PayordStopChecksWidgetAngComponent } from '@backbase/payord-stop-checks-widget-ang';
 
 const routes: Routes = [
   {
@@ -22,7 +23,7 @@ const routes: Routes = [
   },
   {
     path: 'transfers',
-    component: TransferInternalJourneyAngComponent,
+    component: PayordStopChecksWidgetAngComponent,
     canActivate: [AuthGuard],
   },
   {
