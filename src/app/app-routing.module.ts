@@ -23,7 +23,10 @@ const routes: Routes = [
   },
   {
     path: 'stop-checks',
-    component: PayordStopChecksListWidgetAngComponent,
+    loadChildren: () =>
+      import('./stop-checks/stop-checks-journey-bundle.module').then(
+        (m) => m.StopChecksJourneyBundleModule
+      ),
     canActivate: [AuthGuard],
   },
   {
