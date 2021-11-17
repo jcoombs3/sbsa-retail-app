@@ -5,6 +5,9 @@
     "paths": {
       "@sbsa/accounts-transactions-journey-ang": [
         "projects/accounts-transactions-journey-ang/src/public-api.ts"
+      ],
+      "@sbsa/transfer-internal-journey-ang": [
+        "projects/transfer-internal-journey-ang/src/public-api.ts"
       ]
     },
     "baseUrl": "./",
