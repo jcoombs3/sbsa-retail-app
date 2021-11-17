@@ -23,7 +23,6 @@ import { AuthGuard } from './guards/auth.guard';
 import { NotificationModule } from '@backbase/ui-ang';
 
 // RoutableWidget
-import { PayordOmniPaymentWidgetAngModule } from '@backbase/retail-ang/payment-order';
 import { PayordStopChecksListWidgetAngModule } from '@backbase/payord-stop-checks-list-widget-ang';
 
 @NgModule({
@@ -35,7 +34,6 @@ import { PayordStopChecksListWidgetAngModule } from '@backbase/payord-stop-check
     NoopAnimationsModule,
     OAuthModule.forRoot(),
     NotificationModule,
-    PayordOmniPaymentWidgetAngModule,
     PayordStopChecksListWidgetAngModule
   ],
   providers: [
