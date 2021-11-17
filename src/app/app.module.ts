@@ -23,11 +23,11 @@ import { AuthGuard } from './guards/auth.guard';
 import { NotificationModule } from '@backbase/ui-ang';
 
 // Stop Checks
-import { PayordStopChecksListWidgetAngModule } from '@backbase/payord-stop-checks-list-widget-ang';
+import { StopChecksJourneyBundleModule } from './stop-checks/stop-checks-journey-bundle.module';
 
 // Transfers
-import { INTERNAL_TRANSFER } from './internal-transfer.config';
 import { PayordOmniPaymentWidgetAngModule } from '@backbase/payord-omni-payment-widget-ang';
+import { TransfersInternalJourneyBundleModule } from './transfers/transfers-internal-journey-bundle.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -38,11 +38,8 @@ import { PayordOmniPaymentWidgetAngModule } from '@backbase/payord-omni-payment-
     NoopAnimationsModule,
     OAuthModule.forRoot(),
     NotificationModule,
-    PayordStopChecksListWidgetAngModule,
-    PayordOmniPaymentWidgetAngModule.withConfig({
-      paymentType: INTERNAL_TRANSFER,
-      businessFunction: 'A2A Transfer',
-    }),
+    PayordOmniPaymentWidgetAngModule,
+    TransfersInternalJourneyBundleModule,
   ],
   providers: [
     ...(environment.mockProviders || []),
