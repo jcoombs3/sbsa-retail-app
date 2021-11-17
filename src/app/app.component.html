@@ -27,9 +27,14 @@
           My Accounts
         </span>
       </a>
-      <a class="text-white" routerLink="/statements" routerLinkActive="bb-layout__horizontal-nav-link--active" #myAccountsRouterLink="routerLinkActive" [attr.aria-current]="myAccountsRouterLink.isActive ? 'page' : undefined" role="link">
+      <a class="text-white mr-3" routerLink="/statements" routerLinkActive="bb-layout__horizontal-nav-link--active" #myAccountsRouterLink="routerLinkActive" [attr.aria-current]="myAccountsRouterLink.isActive ? 'page' : undefined" role="link">
         <span>
           Statements
+        </span>
+      </a>
+      <a class="text-white mr-3" routerLink="/stop-checks" routerLinkActive="bb-layout__horizontal-nav-link--active" #myAccountsRouterLink="routerLinkActive" [attr.aria-current]="myAccountsRouterLink.isActive ? 'page' : undefined" role="link">
+        <span>
+          Stop Checks
         </span>
       </a>
     </nav>

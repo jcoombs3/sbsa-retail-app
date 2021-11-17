@@ -22,6 +22,9 @@ import {
 import { AuthGuard } from './guards/auth.guard';
 import { NotificationModule } from '@backbase/ui-ang';
 
+// RoutableWidget
+import { PayordStopChecksListWidgetAngModule } from '@backbase/payord-stop-checks-list-widget-ang';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -31,6 +34,7 @@ import { NotificationModule } from '@backbase/ui-ang';
     NoopAnimationsModule,
     OAuthModule.forRoot(),
     NotificationModule,
+    PayordStopChecksListWidgetAngModule,
   ],
   providers: [
     ...(environment.mockProviders || []),
