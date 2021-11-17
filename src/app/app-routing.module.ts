@@ -29,11 +29,11 @@ const routes: Routes = [
       ),
     canActivate: [AuthGuard],
   },
-  {
-    path: 'transfers',
-    component: PayordOmniPaymentWidgetAngComponent,
-    canActivate: [AuthGuard],
-  },
+  //  {
+  //    path: 'transfers',
+  //    component: PayordOmniPaymentWidgetAngComponent,
+  //    canActivate: [AuthGuard],
+  //  },
   {
     path: '**',
     redirectTo: 'my-accounts',
