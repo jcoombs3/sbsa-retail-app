@@ -8,9 +8,8 @@ describe('TransferInternalJourneyAngComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TransferInternalJourneyAngComponent ]
-    })
-    .compileComponents();
+      declarations: [TransferInternalJourneyAngComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

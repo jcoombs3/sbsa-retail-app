@@ -7,14 +7,10 @@ import { Component, OnInit } from '@angular/core';
       transfer-internal-journey-ang works!
     </p>
   `,
-  styles: [
-  ]
+  styles: [],
 })
 export class TransferInternalJourneyAngComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
