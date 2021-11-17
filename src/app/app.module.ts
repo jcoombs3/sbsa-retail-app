@@ -22,6 +22,9 @@ import {
 import { AuthGuard } from './guards/auth.guard';
 import { NotificationModule } from '@backbase/ui-ang';
 
+// Transfers
+import { TransferInternalJourneyAngModule } from '@sbsa/transfer-internal-journey-ang';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -31,6 +34,7 @@ import { NotificationModule } from '@backbase/ui-ang';
     NoopAnimationsModule,
     OAuthModule.forRoot(),
     NotificationModule,
+    TransferInternalJourneyAngModule,
   ],
   providers: [
     ...(environment.mockProviders || []),
