@@ -22,8 +22,12 @@ import {
 import { AuthGuard } from './guards/auth.guard';
 import { NotificationModule } from '@backbase/ui-ang';
 
-// RoutableWidget
+// Stop Checks
 import { PayordStopChecksListWidgetAngModule } from '@backbase/payord-stop-checks-list-widget-ang';
+
+// Transfers
+import { INTERNAL_TRANSFER } from './internal-transfer.config';
+import { PayordOmniPaymentWidgetAngModule } from '@backbase/payord-omni-payment-widget-ang';
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,6 +39,10 @@ import { PayordStopChecksListWidgetAngModule } from '@backbase/payord-stop-check
     OAuthModule.forRoot(),
     NotificationModule,
     PayordStopChecksListWidgetAngModule,
+    PayordOmniPaymentWidgetAngModule.withConfig({
+      paymentType: INTERNAL_TRANSFER,
+      businessFunction: 'A2A Transfer',
+    }),
   ],
   providers: [
     ...(environment.mockProviders || []),

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
 import { PayordStopChecksListWidgetAngComponent } from '@backbase/payord-stop-checks-list-widget-ang';
+import { PayordOmniPaymentWidgetAngComponent } from '@backbase/payord-omni-payment-widget-ang';
 
 const routes: Routes = [
   {
@@ -23,6 +24,11 @@ const routes: Routes = [
   {
     path: 'stop-checks',
     component: PayordStopChecksListWidgetAngComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'transfers',
+    component: PayordOmniPaymentWidgetAngComponent,
     canActivate: [AuthGuard],
   },
   {

@@ -37,6 +37,11 @@
           Stop Checks
         </span>
       </a>
+      <a class="text-white mr-3" routerLink="/transfers" routerLinkActive="bb-layout__horizontal-nav-link--active" #myAccountsRouterLink="routerLinkActive" [attr.aria-current]="myAccountsRouterLink.isActive ? 'page' : undefined" role="link">
+        <span>
+          Transfers
+        </span>
+      </a>
     </nav>
   </div>
   <div class="mx-4">
