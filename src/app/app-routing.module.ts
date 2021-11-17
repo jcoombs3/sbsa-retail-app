@@ -21,7 +21,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'transfers',
+    path: 'stop-checks',
     component: PayordStopChecksListWidgetAngComponent,
     canActivate: [AuthGuard],
   },

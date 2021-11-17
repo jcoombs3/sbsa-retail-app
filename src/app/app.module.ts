@@ -34,7 +34,7 @@ import { PayordStopChecksListWidgetAngModule } from '@backbase/payord-stop-check
     NoopAnimationsModule,
     OAuthModule.forRoot(),
     NotificationModule,
-    PayordStopChecksListWidgetAngModule
+    PayordStopChecksListWidgetAngModule,
   ],
   providers: [
     ...(environment.mockProviders || []),
