@@ -169,6 +169,46 @@
           }
         }
       }
+    },
+    "internal-transfer-wrapper-widget-ang": {
+      "projectType": "library",
+      "root": "projects/internal-transfer-wrapper-widget-ang",
+      "sourceRoot": "projects/internal-transfer-wrapper-widget-ang/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/internal-transfer-wrapper-widget-ang/tsconfig.lib.json",
+            "project": "projects/internal-transfer-wrapper-widget-ang/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/internal-transfer-wrapper-widget-ang/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/internal-transfer-wrapper-widget-ang/src/test.ts",
+            "tsConfig": "projects/internal-transfer-wrapper-widget-ang/tsconfig.spec.json",
+            "karmaConfig": "projects/internal-transfer-wrapper-widget-ang/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/internal-transfer-wrapper-widget-ang/tsconfig.lib.json",
+              "projects/internal-transfer-wrapper-widget-ang/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "sbsa-retail-app"
