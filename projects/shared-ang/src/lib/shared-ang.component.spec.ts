@@ -8,9 +8,8 @@ describe('SharedAngComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SharedAngComponent ]
-    })
-    .compileComponents();
+      declarations: [SharedAngComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

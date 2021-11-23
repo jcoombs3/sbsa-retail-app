@@ -7,14 +7,10 @@ import { Component, OnInit } from '@angular/core';
       shared-ang works!
     </p>
   `,
-  styles: [
-  ]
+  styles: [],
 })
 export class SharedAngComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
