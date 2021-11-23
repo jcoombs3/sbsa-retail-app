@@ -4,6 +4,7 @@ import { Route, RouterModule } from '@angular/router';
 import { HeadingWidgetModule } from '@backbase/universal-ang/heading';
 import { IconModule } from '@backbase/ui-ang';
 import { ProductSummaryListWidgetModule } from '@backbase/product-summary-list-widget-ang';
+import { SbsaHeaderModule } from '@sbsa/shared-ang';
 
 import { ProductItemDropdownModule } from '../../ui/product-item-dropdown/product-item-dropdown.module';
 import { AccountsListExtendedComponent } from './accounts-list-extended.component';
@@ -17,6 +18,7 @@ import { AccountsListExtendedComponent } from './accounts-list-extended.componen
         component: AccountsListExtendedComponent,
       },
     ]),
+    SbsaHeaderModule,
     HeadingWidgetModule,
     IconModule,
     ProductSummaryListWidgetModule,

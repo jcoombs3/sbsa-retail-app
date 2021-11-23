@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { SharedAngComponent } from './shared-ang.component';
+import { SbsaHeaderModule } from './header/header.module';
 
 @NgModule({
-  declarations: [SharedAngComponent],
-  imports: [],
-  exports: [SharedAngComponent],
+  declarations: [],
+  imports: [SbsaHeaderModule],
+  exports: [],
 })
-export class SharedAngModule {}
+export class SbsaSharedAngModule {}
