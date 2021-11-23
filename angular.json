@@ -209,6 +209,46 @@
           }
         }
       }
+    },
+    "sbsa-shared-ang": {
+      "projectType": "library",
+      "root": "projects/sbsa-shared-ang",
+      "sourceRoot": "projects/sbsa-shared-ang/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/sbsa-shared-ang/tsconfig.lib.json",
+            "project": "projects/sbsa-shared-ang/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/sbsa-shared-ang/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/sbsa-shared-ang/src/test.ts",
+            "tsConfig": "projects/sbsa-shared-ang/tsconfig.spec.json",
+            "karmaConfig": "projects/sbsa-shared-ang/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/sbsa-shared-ang/tsconfig.lib.json",
+              "projects/sbsa-shared-ang/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "sbsa-retail-app"
