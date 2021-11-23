@@ -5,6 +5,11 @@
     "paths": {
       "@sbsa/accounts-transactions-journey-ang": [
         "projects/accounts-transactions-journey-ang/src/public-api.ts"
+      ],
+      "@sbsa/shared-ang": [
+        "projects/shared-ang/src/public-api.ts",
+        "dist/shared-ang/shared-ang",
+        "dist/shared-ang"
       ]
     },
     "baseUrl": "./",

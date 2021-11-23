@@ -1,10 +1,10 @@
 <!-- START: AccountsListComponent OOTB -->
 <ng-container *ngIf="config.enableManageAccounts; else titleOnly">
-  <bb-heading-widget [heading]="heading" [headingType]="'h1'" [buttonTitle]="manageAccounts" [iconClasses]="'settings'" [customClassName]="'px-0 flex-row align-items-center'" [buttonClasses]="'btn btn-link w-auto bb-button bb-button--xs-hide-text m-0'" (buttonAction)="navigateToAccountManagement()"></bb-heading-widget>
+  <sbsa-header-ui [heading]="heading" [headingType]="'h1'" [buttonTitle]="manageAccounts" [iconClasses]="'settings'" [customClassName]="'px-0 flex-row align-items-center'" [buttonClasses]="'btn btn-link w-auto bb-button bb-button--xs-hide-text m-0'" (buttonAction)="navigateToAccountManagement()"></sbsa-header-ui>
 </ng-container>
 
 <ng-template #titleOnly>
-  <bb-heading-widget [heading]="heading" [headingType]="'h1'"></bb-heading-widget>
+  <sbsa-header-ui [heading]="heading" [headingType]="'h1'"></sbsa-header-ui>
 </ng-template>
 
 <bb-product-summary-list-widget [showIcons]="config.showAccountTypes" [maskIndicator]="config.maskIndicator" (selectedAccount)="onAccountSelect($event)"></bb-product-summary-list-widget>
